@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Factory Method</title>
+</head>
+<body>
+<script>
+
+  class Car {
+    constructor(type, price, speed) {
+      this.type = type;
+      this.price = price;
+      this.speed = speed;
+    }
+  }
+
+  class CarFactory {
+    create(type) {
+      if (type === "Audi")
+        return new Car(type, 99999, 320)
+    }
+  }
+
+  const factory = new CarFactory();
+
+  const Audi = factory.create("Audi");
+
+  console.log(Audi)
+
+</script>
+</body>
+</html>
