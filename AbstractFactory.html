@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Abstract Factory</title>
+</head>
+<body>
+<script>
+
+class CarSport {
+    info() {
+        return "Sport Car"
+    }
+}
+
+class CarFamily {
+    info() {
+        return "Family Car"
+    }
+}
+
+function FactoryCarSport() {
+    return new CarSport();
+}
+
+function FactoryCarFamily() {
+    return new CarFamily();
+}
+
+function Producer(type) {
+    return type === "sport" ? FactoryCarSport : FactoryCarFamily;
+}
+
+const producer = Producer("sport");
+
+const Car = new producer();
+
+console.log(Car.info())
+
+</script>
+</body>
+</html>
