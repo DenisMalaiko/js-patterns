@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Prototype</title>
+</head>
+<body>
+<script>
+
+  class Car {
+      constructor(type, speed, price, color) {
+          this.type = type;
+          this.speed = speed;
+          this.price = price;
+          this.color = color;
+      }
+
+      create() {
+          return new Car(this.type, this.speed, this.price, this.color)
+      }
+  }
+
+  const Tesla = new Car("Tesla", 400, 99999, "white");
+
+  const Tesla1 = Tesla.create();
+  const Tesla2 = Tesla.create();
+
+  Tesla2.type = "BMW";
+  Tesla2.color =  "Black"
+
+  console.log(Tesla1)
+  console.log(Tesla2)
+
+
+</script>
+</body>
+</html>
